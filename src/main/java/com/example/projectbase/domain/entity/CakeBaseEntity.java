@@ -18,7 +18,7 @@ public class CakeBaseEntity extends BaseEntity {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "product_size_id", foreignKey = @ForeignKey(name = "FK_PRODUCT-SIZE_CAKE-BASE"))
+    @JoinColumn(name = "product_size_id", foreignKey = @ForeignKey(name = "FK_PRODUCTSIZE_CAKEBASE"))
     private ProductSizeEntity productSizeEntity;
 
 }
