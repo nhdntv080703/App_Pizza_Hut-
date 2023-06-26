@@ -1,6 +1,6 @@
 package com.example.projectbase.security;
 
-import com.example.projectbase.domain.entity.User;
+import com.example.projectbase.domain.entity.UserEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -43,11 +43,11 @@ public class UserPrincipal implements UserDetails {
     }
   }
 
-  public static UserPrincipal create(User user) {
+  public static UserPrincipal create(UserEntity userEntity) {
     List<GrantedAuthority> authorities = new LinkedList<>();
-    authorities.add(new SimpleGrantedAuthority(user.getRole().getName()));
-    return new UserPrincipal(user.getId(), user.getFirstName(), user.getLastName(),
-        user.getUsername(), user.getPassword(), authorities);
+    authorities.add(new SimpleGrantedAuthority(userEntity.getRoleEntity().getName()));
+    return new UserPrincipal(userEntity.getId(), userEntity.getFirstName(), userEntity.getLastName(),
+        userEntity.getUsername(), userEntity.getPassword(), authorities);
   }
 
   public String getId() {

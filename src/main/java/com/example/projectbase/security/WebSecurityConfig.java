@@ -19,7 +19,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(
@@ -32,6 +32,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   private final CustomUserDetailsServiceImpl customUserDetailsService;
 
   private final JwtAuthenticationFilter jwtAuthenticationFilter;
+
+  public WebSecurityConfig(CustomUserDetailsServiceImpl customUserDetailsService, JwtAuthenticationFilter jwtAuthenticationFilter) {
+    this.customUserDetailsService = customUserDetailsService;
+    this.jwtAuthenticationFilter = jwtAuthenticationFilter;
+  }
 
   @Bean
   public PasswordEncoder passwordEncoder() {

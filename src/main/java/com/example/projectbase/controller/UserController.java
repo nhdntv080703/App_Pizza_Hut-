@@ -19,11 +19,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.validation.Valid;
 
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @RestApiV1
 public class UserController {
 
   private final UserService userService;
+
+  public UserController(UserService userService) {
+    this.userService = userService;
+  }
 
   @Tag(name = "user-controller-admin")
   @Operation(summary = "API get user")
