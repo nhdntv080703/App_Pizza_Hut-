@@ -1,6 +1,6 @@
 package com.example.projectbase.domain.mapper;
 
-import com.example.projectbase.domain.dto.request.UserCreateDto;
+import com.example.projectbase.domain.dto.request.UserRequestDTO;
 import com.example.projectbase.domain.dto.response.UserDto;
 import com.example.projectbase.domain.entity.RoleEntity;
 import com.example.projectbase.domain.entity.UserEntity;
@@ -12,14 +12,14 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-06-25T23:53:15+0700",
+    date = "2023-06-26T17:42:12+0700",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 1.8.0_111 (Oracle Corporation)"
 )
 @Component
 public class UserMapperImpl implements UserMapper {
 
     @Override
-    public UserEntity toUser(UserCreateDto userCreateDTO) {
+    public UserEntity toUser(UserRequestDTO userCreateDTO) {
         if ( userCreateDTO == null ) {
             return null;
         }
@@ -27,9 +27,13 @@ public class UserMapperImpl implements UserMapper {
         UserEntityBuilder userEntity = UserEntity.builder();
 
         userEntity.password( userCreateDTO.getPassword() );
+        userEntity.email( userCreateDTO.getEmail() );
+        userEntity.phoneNumber( userCreateDTO.getPhoneNumber() );
+        userEntity.address( userCreateDTO.getAddress() );
+        userEntity.gender( userCreateDTO.getGender() );
         userEntity.username( userCreateDTO.getUsername() );
-        userEntity.firstName( userCreateDTO.getFirstName() );
-        userEntity.lastName( userCreateDTO.getLastName() );
+        userEntity.birthday( userCreateDTO.getBirthday() );
+        userEntity.fullName( userCreateDTO.getFullName() );
 
         return userEntity.build();
     }
@@ -47,8 +51,7 @@ public class UserMapperImpl implements UserMapper {
         userDto.setLastModifiedDate( userEntity.getLastModifiedDate() );
         userDto.setId( userEntity.getId() );
         userDto.setUsername( userEntity.getUsername() );
-        userDto.setFirstName( userEntity.getFirstName() );
-        userDto.setLastName( userEntity.getLastName() );
+        userDto.setFullName( userEntity.getFullName() );
 
         return userDto;
     }

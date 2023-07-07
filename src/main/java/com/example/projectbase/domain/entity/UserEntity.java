@@ -7,10 +7,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -28,17 +25,19 @@ public class UserEntity extends DateAuditing {
   private String id;
 
   @Column(nullable = false)
-  @JsonIgnore
   private String password;
 
   @Column(nullable = false, unique = true)
   private String email;
 
   @Column(nullable = false, unique = true)
-  private String phone;
+  private String phoneNumber;
 
   @Column(nullable = false)
   private String address;
+
+  @Column
+  private String gender;
 
   @Column
   private Integer point;
@@ -46,13 +45,16 @@ public class UserEntity extends DateAuditing {
   @Column(nullable = false, unique = true)
   private String username;
 
-  @Nationalized
-  @Column(nullable = false)
-  private String firstName;
+  @Column
+  private Date birthday;
 
   @Nationalized
   @Column(nullable = false)
-  private String lastName;
+  private String fullName;
+
+//  @Nationalized
+//  @Column(nullable = false)
+//  private String lastName;
 
   //Link to table Role
   @ManyToOne

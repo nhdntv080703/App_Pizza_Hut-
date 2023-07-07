@@ -26,7 +26,8 @@ public class CustomUserDetailsServiceImpl implements UserDetailsService, CustomU
     UserEntity userEntity = userRepository.findByUsername(username)
         .orElseThrow(() -> new NotFoundException(ErrorMessage.User.ERR_NOT_FOUND_USERNAME,
             new String[]{username}));
-    return UserPrincipal.create(userEntity);
+    UserDetails userDetails = UserPrincipal.create(userEntity);
+    return userDetails;
   }
 
   @Override
