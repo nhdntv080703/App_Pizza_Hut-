@@ -95,8 +95,12 @@ public class UserServiceImpl implements UserService {
     BindingResultUtils.bindResult(bindingResult);
     Optional<UserEntity> userEntity = userRepository.findByUsername(userDTO.getUsername());
     if(!userEntity.isPresent() ){
-      UserEntity userEntitySave = userConverter.converDTOToEntity(userDTO);
-      return ResponseEntity.ok(userConverter.converEntityToDTO(userRepository.save(userEntitySave)));
+      UserEntity entityEmail = userRepository.findByEmail(userDTO.getEmail());
+      if(entityEmail != null) {
+        UserEntity userEntitySave = userConverter.converDTOToEntity(userDTO);
+        return ResponseEntity.ok(userConverter.converEntityToDTO(userRepository.save(userEntitySave)));
+      }
+      throw new AlreadyExistsException("User already exists with email " + userDTO.getEmail());
     }
     else {
       throw new AlreadyExistsException("User already exists with username " + userDTO.getUsername());
