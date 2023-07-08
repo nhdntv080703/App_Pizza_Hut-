@@ -93,17 +93,19 @@ public class UserServiceImpl implements UserService {
   public ResponseEntity<?> createNewUser(@Valid UserRequestDTO userDTO,
                                          BindingResult bindingResult) {
     BindingResultUtils.bindResult(bindingResult);
-    Optional<UserEntity> userEntity = userRepository.findByUsername(userDTO.getUsername());
-    if(!userEntity.isPresent() ){
-      UserEntity entityEmail = userRepository.findByEmail(userDTO.getEmail());
-      if(entityEmail != null) {
-        UserEntity userEntitySave = userConverter.converDTOToEntity(userDTO);
-        return ResponseEntity.ok(userConverter.converEntityToDTO(userRepository.save(userEntitySave)));
-      }
-      throw new AlreadyExistsException("User already exists with username " + userDTO.getEmail());
-    }
-    else {
+    Optional<UserEntity> userUserName = userRepository.findByUsername(userDTO.getUsername());
+    if(userUserName.isPresent() ){
       throw new AlreadyExistsException("User already exists with username " + userDTO.getUsername());
     }
+    UserEntity userEntity = userRepository.findByEmail(userDTO.getEmail());
+    if(userEntity != null) {
+      throw new AlreadyExistsException("User already exists with username " + userDTO.getEmail());
+    }
+    userEntity = userRepository.findByPhone(userDTO.getPhoneNumber());
+    if(userEntity != null){
+      throw new AlreadyExistsException("User already exists with phone " + userDTO.getPhoneNumber());
+    }
+    UserEntity userEntitySave = userConverter.converDTOToEntity(userDTO);
+    return ResponseEntity.ok(userConverter.converEntityToDTO(userRepository.save(userEntitySave)));
   }
 }
