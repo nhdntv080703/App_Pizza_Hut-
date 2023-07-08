@@ -27,4 +27,10 @@ public class CartEntity extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "product_id")
     private ProductEntity productEntity;
+
+    public CartEntity(UserEntity userEntity,ProductEntity productEntity,Integer quantity){
+        this.userEntity=userEntity;
+        this.productEntity=productEntity;
+        this.quantity=quantity;
+    }
 }

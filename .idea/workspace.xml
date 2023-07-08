@@ -5,40 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bed468f8-3e84-4e83-a06a-54e6b66b56f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/converter/CategoryConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/converter/ProductConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/dto/request/CategoryCreateDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/dto/request/ProductCreateDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/exception/ForeignKeyConstraintException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/repository/CategoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/service/CategoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/service/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/service/impl/CategoryServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-base.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project-base.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/constant/ErrorMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/constant/ErrorMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/converter/UserConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/converter/UserConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/dto/request/UserCreateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/dto/request/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/dto/request/UserRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/dto/request/UserCreateDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/repository/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/CartEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/CartEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/constant/ErrorMessage$Auth.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/constant/ErrorMessage$Auth.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/constant/ErrorMessage$User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/constant/ErrorMessage$User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/constant/ErrorMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/constant/ErrorMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/converter/UserConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/converter/UserConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/dto/request/UserCreateDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/dto/request/UserCreateDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/dto/request/UserRequestDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/mapper/UserMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/mapper/UserMapperImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/CartEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/CartEntity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/example/projectbase/domain/mapper/UserMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/example/projectbase/domain/mapper/UserMapperImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,6 +66,9 @@
         <entry key="JPA Inspector" value="true" />
         <entry key="JPA Palette" value="true" />
         <entry key="JPA Structure" value="true" />
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
@@ -98,6 +76,9 @@
         <entry key="JPA Inspector" value="false" />
         <entry key="JPA Palette" value="false" />
         <entry key="JPA Structure" value="false" />
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
   </component>
@@ -114,7 +95,9 @@
     <option name="height" value="955" />
   </component>
   <component name="ProjectId" id="2RgKhtEokvb8im7qaOBPfQq74vu" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -258,7 +241,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1687665835113" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../java_private/JavaHITNangCao/buoi10_sendMail" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/example/projectbase/service" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -268,15 +251,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tienanh03\Desktop\BTL_PIZZA\ver4\App_Pizza_Hut-\src\main\java\com\example\projectbase\service" />
       <recent name="D:\App_Pizza_Hut\src\main\java\com\example\projectbase\converter" />
       <recent name="D:\App_Pizza_Hut-\src\main\java\com\example\projectbase" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.projectbase.exception" />
+      <recent name="com.example.projectbase.repository" />
       <recent name="com.example.projectbase.service.impl" />
       <recent name="com.example.projectbase.service" />
-      <recent name="com.example.projectbase.repository" />
-      <recent name="com.example.projectbase.domain.dto.request" />
+      <recent name="com.example.projectbase.domain.dto" />
+      <recent name="com.example.projectbase.controller" />
     </key>
   </component>
   <component name="RunManager">
@@ -323,6 +307,8 @@
       <workItem from="1688784852916" duration="187000" />
       <workItem from="1688785116114" duration="28000" />
       <workItem from="1688785189579" duration="1693000" />
+      <workItem from="1688787461243" duration="1407000" />
+      <workItem from="1688788977627" duration="3044000" />
     </task>
     <servers />
   </component>
@@ -400,9 +386,44 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/projectbase/security/UserPrincipal.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/projectbase/controller/UserController.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/projectbase/service/impl/UserServiceImpl.java</url>
+          <line>119</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/projectbase/security/jwt/JwtAuthenticationFilter.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/projectbase/service/impl/UserServiceImpl.java</url>
+          <line>128</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/projectbase/service/impl/UserServiceImpl.java</url>
+          <line>121</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/projectbase/service/impl/UserServiceImpl.java</url>
+          <line>124</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/projectbase/service/impl/UserServiceImpl.java</url>
+          <line>125</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/projectbase/service/impl/UserServiceImpl.java</url>
+          <line>126</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

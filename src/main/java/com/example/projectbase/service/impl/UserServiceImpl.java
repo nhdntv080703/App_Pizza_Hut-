@@ -120,9 +120,11 @@ public class UserServiceImpl implements UserService {
     BindingResultUtils.bindResult(bindingResult);
     Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
     UserDetailImp userDetailImp = new UserDetailImp();
+
     if (authentication != null && authentication.isAuthenticated()) {
       String userName = authentication.getPrincipal().toString();
       userDetailImp = (UserDetailImp)userDetailServiceImp.loadUserByUsername(userName);
+//        userDetailImp =(UserDetailImp) authentication.getPrincipal();
     }
     if(userDetailImp != null){
       UserEntity existUserEntity = userConverter.converUserDetailToEntity(userDetailImp);
