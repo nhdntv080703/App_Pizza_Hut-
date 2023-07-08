@@ -16,7 +16,7 @@ import javax.validation.constraints.Pattern;
 @NoArgsConstructor
 @Getter
 @Setter
-public class UserCreateDto {
+public class UserDto {
 
   @NotNull(message = ErrorMessage.INVALID_SOME_THING_FIELD_IS_REQUIRED)
   private String username;

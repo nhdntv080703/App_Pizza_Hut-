@@ -1,6 +1,6 @@
 package com.example.projectbase.domain.mapper;
 
-import com.example.projectbase.domain.dto.request.UserRequestDTO;
+import com.example.projectbase.domain.dto.request.UserCreateDTO;
 import com.example.projectbase.domain.dto.response.UserDto;
 import com.example.projectbase.domain.entity.RoleEntity;
 import com.example.projectbase.domain.entity.UserEntity;
@@ -12,14 +12,14 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-07-08T08:31:55+0700",
+    date = "2023-07-08T09:54:36+0700",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 1.8.0_111 (Oracle Corporation)"
 )
 @Component
 public class UserMapperImpl implements UserMapper {
 
     @Override
-    public UserEntity toUser(UserRequestDTO userCreateDTO) {
+    public UserEntity toUser(UserCreateDTO userCreateDTO) {
         if ( userCreateDTO == null ) {
             return null;
         }

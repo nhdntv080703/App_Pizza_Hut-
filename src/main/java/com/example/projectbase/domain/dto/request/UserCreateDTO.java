@@ -1,5 +1,6 @@
 package com.example.projectbase.domain.dto.request;
 
+import com.example.projectbase.constant.ErrorMessage;
 import lombok.Setter;
 import lombok.Getter;
 
@@ -10,24 +11,24 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class UserRequestDTO {
+public class UserCreateDTO {
 
-    @NotBlank(message = "fullName is not empty and null")
+    @NotBlank(message = ErrorMessage.INVALID_SOME_THING_FIELD_IS_REQUIRED)
     private String fullName;
 
-    @NotBlank(message = "username is not empty and null")
+    @NotBlank(message = ErrorMessage.INVALID_SOME_THING_FIELD_IS_REQUIRED)
     private String username;
 
     @Valid
-    @Pattern(regexp = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@])[0-9a-zA-Z@]{8,16}$", message = "Mật khẩu không hợp lệ")
+    @Pattern(regexp = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@])[0-9a-zA-Z@]{8,16}$", message = ErrorMessage.INVALID_FORMAT_PASSWORD)
     private String password;
 
     @Valid
-    @Pattern(regexp = "\\d{10}", message = "Số điện thoại không hợp lệ")
+    @Pattern(regexp = "\\d{10}", message = ErrorMessage.ERROR_FORMAT_PHONE)
     private String phoneNumber;
 
     @Valid
-    @Pattern(regexp = "^[\\w.%+-]+@gmail\\.com$", message = "Email phải chứa '@gmail.com'")
+    @Pattern(regexp = "^[\\w.%+-]+@gmail\\.com$", message = ErrorMessage.ERROR_FORMAT_EMAIL)
     private String email;
 
     private String gender;
