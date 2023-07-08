@@ -22,7 +22,7 @@ public interface UserRepository extends JpaRepository<UserEntity, String> {
   @Query("SELECT u FROM UserEntity u WHERE u.email = ?1")
   UserEntity findByEmail(String email);
 
-  @Query("SELECT u FROM UserEntity u WHERE u.phone = ?1")
+  @Query("SELECT u FROM UserEntity u WHERE u.phoneNumber = ?1")
   UserEntity findByPhone(String phone);
 
   default UserEntity getUser(UserPrincipal currentUser) {
