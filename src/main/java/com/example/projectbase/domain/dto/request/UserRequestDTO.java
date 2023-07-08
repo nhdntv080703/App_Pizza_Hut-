@@ -26,7 +26,8 @@ public class UserRequestDTO {
     @Pattern(regexp = "\\d{10}", message = "Số điện thoại không hợp lệ")
     private String phoneNumber;
 
-    @NotBlank(message = "email is not empty and null")
+    @Valid
+    @Pattern(regexp = "^[\\w.%+-]+@gmail\\.com$", message = "Email phải chứa '@gmail.com'")
     private String email;
 
     private String gender;
