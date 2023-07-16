@@ -23,7 +23,7 @@ public class OrderItemEntity extends BaseEntity {
     private OrderEntity orderEntity;
 
     @ManyToOne
-    @JoinColumn(name = "product_id")
-    private ProductEntity productEntity;
+    @JoinColumn(name = "product_detail_id")
+    private ProductDetailEntity productDetailEntity;
 
 }

@@ -1,6 +1,7 @@
 package com.example.projectbase.domain.entity;
 
 import com.example.projectbase.domain.entity.common.BaseEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -39,12 +40,8 @@ public class OrderEntity extends BaseEntity {
     @JoinColumn(name = "customer_id", foreignKey = @ForeignKey(name = "FK_ORDER_USER"))
     private UserEntity userEntity;
 
-    @ManyToMany
-    @JoinTable(
-            name = "order_items",
-            joinColumns = @JoinColumn(name = "order_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id")
-    )
-    private List<ProductEntity> productEntities = new ArrayList<>();
+    @OneToMany(mappedBy = "orderEntity")
+    @JsonIgnore
+    private List<OrderItemEntity> orderItemEntities=new ArrayList<>();
 
 }

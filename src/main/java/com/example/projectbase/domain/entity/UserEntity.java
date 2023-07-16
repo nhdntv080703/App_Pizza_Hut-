@@ -63,11 +63,6 @@ public class UserEntity extends DateAuditing {
   @JsonIgnore
   private Set<OrderEntity> orderEntitySet = new HashSet<>();
 
-  @ManyToMany
-  @JoinTable(
-          name = "cart",
-          joinColumns = @JoinColumn(name = "user_id"),
-          inverseJoinColumns = @JoinColumn(name = "product_id")
-  )
-  private List<ProductEntity> productEntityList = new ArrayList<>();
+  @OneToMany(mappedBy = "userEntity")
+  private List<CartEntity> cartEntities=new ArrayList<>();
 }
