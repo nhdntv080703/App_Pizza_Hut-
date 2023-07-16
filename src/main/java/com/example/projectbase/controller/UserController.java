@@ -3,10 +3,10 @@ package com.example.projectbase.controller;
 import com.example.projectbase.base.RestApiV1;
 import com.example.projectbase.base.VsResponseUtil;
 import com.example.projectbase.constant.UrlConstant;
+import com.example.projectbase.domain.dto.common.UserDetailImp;
 import com.example.projectbase.domain.dto.pagination.PaginationFullRequestDto;
 import com.example.projectbase.domain.dto.request.UserCreateDTO;
 import com.example.projectbase.security.CurrentUser;
-import com.example.projectbase.security.UserPrincipal;
 import com.example.projectbase.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-//@RequiredArgsConstructor
 @RestApiV1
 public class UserController {
 
@@ -40,7 +39,7 @@ public class UserController {
   @Operation(summary = "API get current user login")
   @GetMapping(UrlConstant.User.GET_CURRENT_USER)
   public ResponseEntity<?> getCurrentUser(@Parameter(name = "principal", hidden = true)
-                                          @CurrentUser UserPrincipal principal) {
+                                          @CurrentUser UserDetailImp principal) {
     return VsResponseUtil.success(userService.getCurrentUser(principal));
   }
 
@@ -65,4 +64,10 @@ public class UserController {
   public ResponseEntity<?> updateUser (@Valid @ModelAttribute UserCreateDTO userDTO, BindingResult bindingResult) {
     return userService.updateUser(userDTO, bindingResult);
   }
+
+  @DeleteMapping
+  public void deleteUser(@RequestParam String id){
+      userService.deleteUser(id);
+  }
+
 }

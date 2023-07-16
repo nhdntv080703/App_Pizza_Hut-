@@ -25,13 +25,13 @@ public class UserConverter {
     private PasswordEncoder passwordEncoder;
 
 //    hàm conver đang sai, cần sửa
-    public UserEntity converDTOToEntity(UserCreateDTO userDTO, UserEntity userEntity){
-        String id = userEntity.getId();
-        userEntity = modelMapper.map(userDTO, UserEntity.class);
+    public UserEntity converDTOToEntity(UserCreateDTO userDTO, UserDetailImp userDetailImp){
+        UserEntity userEntity = modelMapper.map(userDTO, UserEntity.class);
         userEntity.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         RoleEntity role = roleRepository.findByRoleName("ROLE_USER");
         userEntity.setRoleEntity(role);
-        userEntity.setId(id);
+        userEntity.setId(userDetailImp.getId());
+        userEntity.setUsername(userDetailImp.getUsername());
         return userEntity;
     }
 

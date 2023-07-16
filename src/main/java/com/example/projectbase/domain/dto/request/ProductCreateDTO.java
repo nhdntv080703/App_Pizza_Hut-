@@ -12,15 +12,20 @@ public class ProductCreateDTO {
     @NotBlank(message = "Name is not empty and null")
     private String name;
 
-    @NotNull(message = "Count is not null")
-    private Long count;
-
     @NotNull(message = "categoryid is not null")
     private Long categoryId;
 
     private MultipartFile image;
 
     private String description;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public Long getId() {
         return id;
@@ -36,14 +41,6 @@ public class ProductCreateDTO {
 
     public void setProductName(String productName) {
         this.name = productName;
-    }
-
-    public Long getCount() {
-        return count;
-    }
-
-    public void setCount(Long count) {
-        this.count = count;
     }
 
     public MultipartFile getImage() {

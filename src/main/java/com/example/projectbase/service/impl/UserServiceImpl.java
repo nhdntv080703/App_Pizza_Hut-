@@ -10,11 +10,10 @@ import com.example.projectbase.domain.dto.request.UserCreateDTO;
 import com.example.projectbase.domain.dto.response.UserDto;
 import com.example.projectbase.domain.entity.UserEntity;
 import com.example.projectbase.domain.mapper.UserMapper;
-import com.example.projectbase.email.MailService;
+import com.example.projectbase.sendMessage.email.MailService;
 import com.example.projectbase.exception.AlreadyExistsException;
 import com.example.projectbase.exception.NotFoundException;
 import com.example.projectbase.repository.UserRepository;
-import com.example.projectbase.security.UserPrincipal;
 import com.example.projectbase.service.UserService;
 import com.example.projectbase.util.BindingResultUtils;
 import com.example.projectbase.util.PaginationUtil;
@@ -34,7 +33,6 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 @Service
-//@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
   private final UserRepository userRepository;
@@ -77,7 +75,7 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
-  public UserDto getCurrentUser(UserPrincipal principal) {
+  public UserDto getCurrentUser(UserDetailImp principal) {
     UserEntity userEntity = userRepository.getUser(principal);
     return userMapper.toUserDto(userEntity);
   }
@@ -116,23 +114,23 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
-  public ResponseEntity<?> updateUser(UserCreateDTO userDTO, BindingResult bindingResult) {
+  public ResponseEntity<?> updateUser(@Valid UserCreateDTO userDTO, BindingResult bindingResult) {
     BindingResultUtils.bindResult(bindingResult);
     Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
     UserDetailImp userDetailImp = new UserDetailImp();
     if (authentication != null && authentication.isAuthenticated()) {
-      String userName = authentication.getPrincipal().toString();
-      userDetailImp = (UserDetailImp)userDetailServiceImp.loadUserByUsername(userName);
-    }
-    if(userDetailImp != null){
-      UserEntity existUserEntity = userConverter.converUserDetailToEntity(userDetailImp);
-      existUserEntity = userConverter.converDTOToEntity(userDTO, existUserEntity);
-
+        userDetailImp = (UserDetailImp) authentication.getPrincipal();
+    } // Đoạn này có thể dùng hàm get current user
+      // Từ dto -> entity
+      UserEntity existUserEntity = userConverter.converDTOToEntity(userDTO);
+      existUserEntity.setId(userDetailImp.getId());
+      existUserEntity.setUsername(userDetailImp.getUsername());
       UserEntity userEntity = userRepository.save(existUserEntity);
       return  ResponseEntity.ok(userConverter.converEntityToDTO(userEntity));
-    }
-    else{
-      throw new NotFoundException("User not found ");
-    }
+  }
+
+  @Override
+  public void deleteUser(String id) {
+      userRepository.deleteById(id);
   }
 }

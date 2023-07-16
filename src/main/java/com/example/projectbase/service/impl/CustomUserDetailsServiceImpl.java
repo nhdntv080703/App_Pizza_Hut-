@@ -1,8 +1,8 @@
 package com.example.projectbase.service.impl;
 
 import com.example.projectbase.constant.ErrorMessage;
+import com.example.projectbase.domain.dto.common.UserDetailImp;
 import com.example.projectbase.domain.entity.UserEntity;
-import com.example.projectbase.security.UserPrincipal;
 import com.example.projectbase.service.CustomUserDetailsService;
 import com.example.projectbase.exception.NotFoundException;
 import com.example.projectbase.repository.UserRepository;
@@ -26,7 +26,7 @@ public class CustomUserDetailsServiceImpl implements UserDetailsService, CustomU
     UserEntity userEntity = userRepository.findByUsername(username)
         .orElseThrow(() -> new NotFoundException(ErrorMessage.User.ERR_NOT_FOUND_USERNAME,
             new String[]{username}));
-    UserDetails userDetails = UserPrincipal.create(userEntity);
+    UserDetails userDetails = UserDetailImp.map(userEntity);
     return userDetails;
   }
 
@@ -35,7 +35,7 @@ public class CustomUserDetailsServiceImpl implements UserDetailsService, CustomU
   public UserDetails loadUserById(String id) {
     UserEntity userEntity = userRepository.findById(id)
         .orElseThrow(() -> new NotFoundException(ErrorMessage.User.ERR_NOT_FOUND_ID, new String[]{id}));
-    return UserPrincipal.create(userEntity);
+    return UserDetailImp.map(userEntity);
   }
 
 }

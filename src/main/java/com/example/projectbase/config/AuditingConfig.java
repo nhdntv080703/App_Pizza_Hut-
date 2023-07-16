@@ -1,6 +1,7 @@
 package com.example.projectbase.config;
 
-import com.example.projectbase.security.UserPrincipal;
+//import com.example.projectbase.security.UserPrincipal;
+import com.example.projectbase.domain.dto.common.UserDetailImp;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.AuditorAware;
@@ -30,7 +31,7 @@ class AuditorAwareImpl implements AuditorAware<String> {
     if (authentication == null || !authentication.isAuthenticated() || authentication instanceof AnonymousAuthenticationToken) {
       return Optional.empty();
     }
-    UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
+    UserDetailImp userPrincipal = (UserDetailImp) authentication.getPrincipal();
     return Optional.ofNullable(userPrincipal.getId());
   }
 

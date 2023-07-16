@@ -21,8 +21,16 @@ public class UserDetailImp implements UserDetails {
     private String email;
     private String address;
     private Date birthday;
+    private String phoneNumber;
+    private String gender;
 
-    public UserDetailImp(String id, String fullName, String username, String password, String email, String address, Date birthday, Collection<? extends GrantedAuthority> authorities) {
+    public UserDetailImp(String username, String password, Collection<? extends GrantedAuthority> authorities) {
+        this.userName = username;
+        this.passWord = password;
+        this.authorities = authorities;
+    }
+
+    public UserDetailImp(String id, String fullName, String username, String password, String email, String address, Date birthday, Collection<? extends GrantedAuthority> authorities, String phoneNumber, String gender) {
         this.id = id;
         this.fullName = fullName;
         this.userName = username;
@@ -31,6 +39,16 @@ public class UserDetailImp implements UserDetails {
         this.address = address;
         this.birthday = birthday;
         this.authorities = authorities;
+        this.phoneNumber = phoneNumber;
+        this.gender = gender;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public String getGender() {
+        return gender;
     }
 
 
@@ -88,7 +106,9 @@ public class UserDetailImp implements UserDetails {
                 user.getEmail(),
                 user.getAddress(),
                 user.getBirthday(),
-                roles);
+                roles,
+                user.getPhoneNumber(),
+                user.getGender());
     }
 
 

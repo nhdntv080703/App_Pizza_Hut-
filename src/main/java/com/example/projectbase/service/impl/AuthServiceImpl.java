@@ -1,13 +1,13 @@
 package com.example.projectbase.service.impl;
 
 import com.example.projectbase.constant.ErrorMessage;
+import com.example.projectbase.domain.dto.common.UserDetailImp;
 import com.example.projectbase.domain.dto.request.LoginRequestDto;
 import com.example.projectbase.domain.dto.request.TokenRefreshRequestDto;
 import com.example.projectbase.domain.dto.response.CommonResponseDto;
 import com.example.projectbase.domain.dto.response.LoginResponseDto;
 import com.example.projectbase.domain.dto.response.TokenRefreshResponseDto;
 import com.example.projectbase.exception.UnauthorizedException;
-import com.example.projectbase.security.UserPrincipal;
 import com.example.projectbase.security.jwt.JwtTokenProvider;
 import com.example.projectbase.service.AuthService;
 import lombok.RequiredArgsConstructor;
@@ -33,7 +33,7 @@ public class AuthServiceImpl implements AuthService {
               authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(),
                       request.getPassword()));
       SecurityContextHolder.getContext().setAuthentication(authentication);
-      UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
+      UserDetailImp userPrincipal = (UserDetailImp) authentication.getPrincipal();
       String accessToken = jwtTokenProvider.generateToken(userPrincipal, Boolean.FALSE);
       String refreshToken = jwtTokenProvider.generateToken(userPrincipal, Boolean.TRUE);
       return new LoginResponseDto(accessToken,

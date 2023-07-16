@@ -5,6 +5,8 @@ import com.example.projectbase.domain.dto.response.UserDto;
 import com.example.projectbase.domain.entity.RoleEntity;
 import com.example.projectbase.domain.entity.UserEntity;
 import com.example.projectbase.domain.entity.UserEntity.UserEntityBuilder;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Generated;
@@ -12,7 +14,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-07-08T09:54:36+0700",
+    date = "2023-07-16T09:53:14+0700",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 1.8.0_111 (Oracle Corporation)"
 )
 @Component
@@ -32,7 +34,14 @@ public class UserMapperImpl implements UserMapper {
         userEntity.address( userCreateDTO.getAddress() );
         userEntity.gender( userCreateDTO.getGender() );
         userEntity.username( userCreateDTO.getUsername() );
-        userEntity.birthday( userCreateDTO.getBirthday() );
+        try {
+            if ( userCreateDTO.getBirthday() != null ) {
+                userEntity.birthday( new SimpleDateFormat().parse( userCreateDTO.getBirthday() ) );
+            }
+        }
+        catch ( ParseException e ) {
+            throw new RuntimeException( e );
+        }
         userEntity.fullName( userCreateDTO.getFullName() );
 
         return userEntity.build();

@@ -131,6 +131,12 @@
             <scope>test</scope>
             <version>2.5.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.twilio.sdk</groupId>
+            <artifactId>twilio</artifactId>
+            <version>8.18.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>

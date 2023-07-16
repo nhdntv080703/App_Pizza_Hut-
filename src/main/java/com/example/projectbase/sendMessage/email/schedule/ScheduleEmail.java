@@ -1,7 +1,7 @@
-package com.example.projectbase.email.schedule;
+package com.example.projectbase.sendMessage.email.schedule;
 
 import com.example.projectbase.domain.entity.UserEntity;
-import com.example.projectbase.email.MailService;
+import com.example.projectbase.sendMessage.email.MailService;
 import com.example.projectbase.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

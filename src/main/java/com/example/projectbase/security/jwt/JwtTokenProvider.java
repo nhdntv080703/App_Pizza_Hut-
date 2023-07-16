@@ -1,7 +1,7 @@
 package com.example.projectbase.security.jwt;
 
 import com.example.projectbase.constant.ErrorMessage;
-import com.example.projectbase.security.UserPrincipal;
+import com.example.projectbase.domain.dto.common.UserDetailImp;
 import com.example.projectbase.exception.InvalidException;
 import io.jsonwebtoken.*;
 import lombok.extern.slf4j.Slf4j;
@@ -36,13 +36,13 @@ public class JwtTokenProvider {
   @Value("${jwt.refresh.expiration_time}")
   private Integer EXPIRATION_TIME_REFRESH_TOKEN;
 
-  public String generateToken(UserPrincipal userPrincipal, Boolean isRefreshToken) {
-    String authorities = userPrincipal.getAuthorities().stream()
+  public String generateToken(UserDetailImp userDetailImp, Boolean isRefreshToken) {
+    String authorities = userDetailImp.getAuthorities().stream()
         .map(GrantedAuthority::getAuthority)
         .collect(Collectors.joining(","));
     Map<String, Object> claim = new HashMap<>();
     claim.put(CLAIM_TYPE, isRefreshToken ? TYPE_REFRESH : TYPE_ACCESS);
-    claim.put(USERNAME_KEY, userPrincipal.getUsername());
+    claim.put(USERNAME_KEY, userDetailImp.getUsername());
     claim.put(AUTHORITIES_KEY, authorities);
     if (isRefreshToken) {
       return Jwts.builder()
@@ -54,7 +54,7 @@ public class JwtTokenProvider {
     }
     return Jwts.builder()
         .setClaims(claim)
-        .setSubject(userPrincipal.getUsername())
+        .setSubject(userDetailImp.getUsername())
         .setIssuedAt(new Date(System.currentTimeMillis()))
         .setExpiration(new Date(System.currentTimeMillis() + (EXPIRATION_TIME_ACCESS_TOKEN * 60 * 1000L)))
         .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
@@ -71,7 +71,7 @@ public class JwtTokenProvider {
         Arrays.stream(claims.get(AUTHORITIES_KEY).toString().split(","))
             .map(SimpleGrantedAuthority::new)
             .collect(Collectors.toList());
-    UserDetails principal = new UserPrincipal(claims.get(USERNAME_KEY).toString(), "", authorities);
+    UserDetails principal = new UserDetailImp(claims.get(USERNAME_KEY).toString(), "", authorities);
     return new UsernamePasswordAuthenticationToken(principal, "", authorities);
   }
 
