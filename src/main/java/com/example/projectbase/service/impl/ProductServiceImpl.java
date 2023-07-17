@@ -6,6 +6,7 @@ import com.example.projectbase.domain.dto.request.ProductSearchPizzaDTO;
 import com.example.projectbase.domain.dto.response.ProductResponseDTO;
 import com.example.projectbase.domain.entity.CategoryEntity;
 import com.example.projectbase.domain.entity.ProductEntity;
+import com.example.projectbase.domain.entity.SizeEntity;
 import com.example.projectbase.exception.AlreadyExistsException;
 import com.example.projectbase.exception.NotFoundException;
 import com.example.projectbase.repository.CategoryRepository;

@@ -45,17 +45,17 @@ public class ProductController {
     }
 
     @GetMapping("/pastaAndRice")
-    public ResponseEntity<?> findPastaAndRice(){
-        return null;
+    public ResponseEntity<?> findPastaAndRice(ProductSearchPizzaDTO productSearchPizzaDTO){
+        return ResponseEntity.ok(productService.findWithPizza(productSearchPizzaDTO));
     }
 
     @GetMapping("/appetizer")
-    public ResponseEntity<?> findAppetizer(){
-        return null;
+    public ResponseEntity<?> findAppetizer(ProductSearchPizzaDTO productSearchPizzaDTO){
+        return ResponseEntity.ok(productService.findWithPizza(productSearchPizzaDTO));
     }
 
     @GetMapping("/drinks")
-    public ResponseEntity<?> findDrinks(){
-        return null;
+    public ResponseEntity<?> findDrinks(ProductSearchPizzaDTO productSearchPizzaDTO){
+        return ResponseEntity.ok(productService.findWithPizza(productSearchPizzaDTO));
     }
 }
