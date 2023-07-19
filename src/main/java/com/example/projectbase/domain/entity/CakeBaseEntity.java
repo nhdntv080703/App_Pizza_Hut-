@@ -1,9 +1,12 @@
 package com.example.projectbase.domain.entity;
 
 import com.example.projectbase.domain.entity.common.BaseEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,8 +20,8 @@ public class CakeBaseEntity extends BaseEntity {
     @Column(nullable = false)
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "product_size_id", foreignKey = @ForeignKey(name = "FK_PRODUCTSIZE_CAKEBASE"))
-    private ProductSizeEntity productSizeEntity;
+    @OneToMany(mappedBy = "cakeBaseEntity",cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<ProductDetailEntity> productDetailEntities=new ArrayList<>();
 
 }

@@ -1,6 +1,7 @@
 package com.example.projectbase.domain.dto.common;
 
 import com.example.projectbase.domain.entity.RoleEntity;
+
 import com.example.projectbase.domain.entity.UserEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

@@ -51,11 +51,6 @@ public class UserEntity extends DateAuditing {
   @Nationalized
   @Column(nullable = false)
   private String fullName;
-
-//  @Nationalized
-//  @Column(nullable = false)
-//  private String lastName;
-
   //Link to table Role
   @ManyToOne
   @JoinColumn(name = "role_id", foreignKey = @ForeignKey(name = "FK_USER_ROLE"))
@@ -65,11 +60,6 @@ public class UserEntity extends DateAuditing {
   @JsonIgnore
   private Set<OrderEntity> orderEntitySet = new HashSet<>();
 
-  @ManyToMany
-  @JoinTable(
-          name = "cart",
-          joinColumns = @JoinColumn(name = "user_id"),
-          inverseJoinColumns = @JoinColumn(name = "product_id")
-  )
-  private List<ProductEntity> productEntityList = new ArrayList<>();
+  @OneToMany(mappedBy = "userEntity")
+  private List<CartEntity> cartEntities=new ArrayList<>();
 }

@@ -5,13 +5,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bed468f8-3e84-4e83-a06a-54e6b66b56f4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/ComboDetailEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/ProductDetailEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/security/jwt/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/security/jwt/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/controller/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/security/jwt/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/security/jwt/JwtAuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/service/impl/ProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/service/impl/ProductServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/dto/common/UserDetailImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/dto/common/UserDetailImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/dto/request/ProductCreateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/dto/request/ProductCreateDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/CakeBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/CakeBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/CartEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/CartEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/ComboEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/ComboEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/OrderEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/OrderEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/OrderItemEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/OrderItemEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/ProductEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/ProductEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/ProductPointEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/ProductSizeEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/PromotionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/PromotionEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/SizeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/SizeEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/common/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain/entity/common/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectbase/repository/ProductSizeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectbase/repository/ProductSizeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/dto/common/UserDetailImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/dto/common/UserDetailImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/CakeBaseEntity$CakeBaseEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/CakeBaseEntity$CakeBaseEntityBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/CakeBaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/CakeBaseEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/CartEntity$CartEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/CartEntity$CartEntityBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/CartEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/CartEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/ComboEntity$ComboEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/ComboEntity$ComboEntityBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/ComboEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/ComboEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/OrderEntity$OrderEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/OrderEntity$OrderEntityBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/OrderEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/OrderEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/OrderItemEntity$OrderItemEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/OrderItemEntity$OrderItemEntityBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/OrderItemEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/OrderItemEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/ProductEntity$ProductEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/ProductEntity$ProductEntityBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/ProductEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/ProductEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/ProductPointEntity$ProductPointEntityBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/ProductPointEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/ProductSizeEntity$ProductSizeEntityBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/ProductSizeEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/PromotionEntity$PromotionEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/PromotionEntity$PromotionEntityBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/PromotionEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/PromotionEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/SizeEntity$SizeEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/SizeEntity$SizeEntityBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/SizeEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/SizeEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/UserEntity$UserEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/UserEntity$UserEntityBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/UserEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/UserEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/common/BaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/domain/entity/common/BaseEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/projectbase/repository/ProductSizeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/projectbase/repository/ProductSizeRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/example/projectbase/domain/mapper/UserMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/example/projectbase/domain/mapper/UserMapperImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +63,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -65,6 +106,9 @@
         <entry key="JPA Inspector" value="true" />
         <entry key="JPA Palette" value="true" />
         <entry key="JPA Structure" value="true" />
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
@@ -72,6 +116,9 @@
         <entry key="JPA Inspector" value="false" />
         <entry key="JPA Palette" value="false" />
         <entry key="JPA Structure" value="false" />
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
   </component>
@@ -88,7 +135,9 @@
     <option name="height" value="955" />
   </component>
   <component name="ProjectId" id="2RgKhtEokvb8im7qaOBPfQq74vu" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -232,7 +281,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1687665835113" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/example/projectbase/domain" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -242,6 +291,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tienanh03\Desktop\BTL_PIZZA\display\App_Pizza_Hut-\src\main\java\com\example\projectbase\domain" />
       <recent name="D:\App_Pizza_Hut\src\main\java\com\example\projectbase\converter" />
       <recent name="D:\App_Pizza_Hut-\src\main\java\com\example\projectbase" />
     </key>
@@ -318,6 +368,8 @@
       <workItem from="1689508803551" duration="1922000" />
       <workItem from="1689528165363" duration="372000" />
       <workItem from="1689529115805" duration="626000" />
+      <workItem from="1689693463112" duration="663000" />
+      <workItem from="1689694159135" duration="15018000" />
     </task>
     <servers />
   </component>

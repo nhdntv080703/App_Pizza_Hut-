@@ -1,6 +1,7 @@
 package com.example.projectbase.domain.entity;
 
 import com.example.projectbase.domain.entity.common.BaseEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -12,8 +13,10 @@ import javax.persistence.*;
 @Builder
 @Entity
 @Table(name = "cart")
-public class CartEntity extends BaseEntity {
-
+public class CartEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @Column(nullable = false)
     private Integer quantity;
 
@@ -21,10 +24,11 @@ public class CartEntity extends BaseEntity {
     private Long total_money;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "user_id")
     private UserEntity userEntity;
 
     @ManyToOne
-    @JoinColumn(name = "product_id")
-    private ProductEntity productEntity;
+    @JoinColumn(name = "product_detail_id")
+    private ProductDetailEntity productDetailEntity;
 }

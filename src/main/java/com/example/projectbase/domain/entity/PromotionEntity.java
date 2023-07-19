@@ -3,8 +3,9 @@ package com.example.projectbase.domain.entity;
 import com.example.projectbase.domain.entity.common.BaseEntity;
 import lombok.*;
 
-import javax.persistence.*;
-import java.util.Base64;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @AllArgsConstructor
 @NoArgsConstructor

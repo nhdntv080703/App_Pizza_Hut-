@@ -5,9 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -27,22 +25,13 @@ public class ProductEntity extends BaseEntity {
     @Column(columnDefinition = "TEXT")
     private String description;
 
+    private int point;
+
     @ManyToOne
     @JoinColumn(name = "category_id", foreignKey = @ForeignKey(name = "FK_PRODUCT_CATEGORY"))
     private CategoryEntity categoryEntity;
 
-    @ManyToMany(mappedBy = "productEntities")
-    private List<OrderEntity> orderEntities = new ArrayList<>();
+    @OneToMany(mappedBy = "productEntity")
+    private List<ProductDetailEntity> productDetailEntities = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "productEntities")
-    private List<ComboEntity> comboEntities = new ArrayList<>();
-
-    @ManyToMany(mappedBy = "productEntityList")
-    private List<UserEntity> userEntities = new ArrayList<>();
-
-    @ManyToMany(mappedBy = "productEntityList")
-    private List<SizeEntity> sizeEntities = new ArrayList<>();
-
-    @OneToOne(mappedBy = "productEntity", cascade = CascadeType.ALL)
-    private ProductPointEntity productPointEntity = new ProductPointEntity();
 }

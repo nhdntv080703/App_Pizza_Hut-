@@ -18,12 +18,6 @@ public class SizeEntity extends BaseEntity {
 
     @Column(nullable = false)
     private String name;
-
-    @ManyToMany
-    @JoinTable(
-            name = "product_size",
-            joinColumns = @JoinColumn(name = "size_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id")
-    )
-    private List<ProductEntity> productEntityList = new ArrayList<>();
+    @OneToMany(mappedBy = "sizeEntity", cascade = CascadeType.ALL)
+    private List<ProductDetailEntity> productDetailEntities=new ArrayList<>();
 }
