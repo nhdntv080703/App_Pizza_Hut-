@@ -23,10 +23,12 @@ public class CartConvert {
     @Autowired
     UserRepository userRepository;
     @Autowired
+    UserService userService;
+    @Autowired
     ProductDetailRepository productDetailRepository;
     public CartEntity converDTOToEntity(CartCreateDTO cartCreateDTO){
         CartEntity cartEntity=modelMapper.map(cartCreateDTO,CartEntity.class);
-//        cartEntity.setUserEntity(userRepository.fin);
+        cartEntity.setUserEntity(userService.getCurrentUser());
         cartEntity.setProductDetailEntity(productDetailRepository.findById(cartCreateDTO.getProductDetailId()).get());
         return cartEntity;
     }

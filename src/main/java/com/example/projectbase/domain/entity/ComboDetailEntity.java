@@ -13,10 +13,8 @@ import javax.persistence.*;
 @Builder
 @Entity
 @Table(name = "combo_detail")
-public class ComboDetailEntity  {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class ComboDetailEntity  extends BaseEntity {
+
     @ManyToOne
     @JsonIgnore
     @JoinColumn(name = "combo_id")

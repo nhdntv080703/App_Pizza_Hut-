@@ -75,9 +75,14 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
-  public UserDto getCurrentUser(UserDetailImp principal) {
-    UserEntity userEntity = userRepository.getUser(principal);
-    return userMapper.toUserDto(userEntity);
+  public UserEntity getCurrentUser() {
+    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    UserDetailImp userDetailImp = new UserDetailImp();
+    if (authentication != null && authentication.isAuthenticated()) {
+      userDetailImp = (UserDetailImp) authentication.getPrincipal();
+    } // Đoạn này có thể dùng hàm get current user
+    UserEntity userEntity=userRepository.findByUsername(userDetailImp.getUsername()).get();
+    return userEntity;
   }
 
   @Override

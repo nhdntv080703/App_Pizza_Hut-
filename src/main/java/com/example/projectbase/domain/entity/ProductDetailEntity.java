@@ -15,10 +15,8 @@ import java.util.List;
 @Builder
 @Entity
 @Table(name = "product_detail")
-public class ProductDetailEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class ProductDetailEntity extends BaseEntity {
+
     @ManyToOne
     @JoinColumn(name = "product_id")
     private ProductEntity productEntity;

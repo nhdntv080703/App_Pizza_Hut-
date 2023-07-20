@@ -38,9 +38,8 @@ public class UserController {
   @Tags({@Tag(name = "user-controller-admin"), @Tag(name = "user-controller")})
   @Operation(summary = "API get current user login")
   @GetMapping(UrlConstant.User.GET_CURRENT_USER)
-  public ResponseEntity<?> getCurrentUser(@Parameter(name = "principal", hidden = true)
-                                          @CurrentUser UserDetailImp principal) {
-    return VsResponseUtil.success(userService.getCurrentUser(principal));
+  public ResponseEntity<?> getCurrentUser() {
+    return ResponseEntity.ok(userService.getCurrentUser());
   }
 
   @Tag(name = "user-controller-admin")

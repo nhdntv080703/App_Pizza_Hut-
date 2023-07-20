@@ -16,7 +16,7 @@ public class ComboController {
     @Autowired
     private ComboService comboService;
     @PostMapping("/create")
-    public ResponseEntity<?> create(@Valid @RequestBody ComboCreateDTO comboCreateDTO, BindingResult bindingResult){
+    public ResponseEntity<?> create(@Valid @ModelAttribute ComboCreateDTO comboCreateDTO, BindingResult bindingResult){
         return comboService.createCombo(comboCreateDTO,bindingResult);
     }
     @GetMapping("/findAll")
