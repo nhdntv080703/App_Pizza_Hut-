@@ -1,6 +1,7 @@
 package com.example.projectbase.security;
 
-import com.example.projectbase.domain.entity.User;
+import com.example.projectbase.domain.entity.RoleEntity;
+import com.example.projectbase.domain.entity.UserEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -12,9 +13,9 @@ public class UserPrincipal implements UserDetails {
 
   private final String id;
 
-  private final String firstName;
+  private final String fullName;
 
-  private final String lastName;
+//  private final String lastName;
 
   @JsonIgnore
   private final String username;
@@ -25,14 +26,14 @@ public class UserPrincipal implements UserDetails {
   private final Collection<? extends GrantedAuthority> authorities;
 
   public UserPrincipal(String username, String password, Collection<? extends GrantedAuthority> authorities) {
-    this(null, null, null, username, password, authorities);
+    this(null, null, username, password, authorities);
   }
 
-  public UserPrincipal(String id, String firstName, String lastName, String username, String password,
+  public UserPrincipal(String id, String fullName, String username, String password,
                        Collection<? extends GrantedAuthority> authorities) {
     this.id = id;
-    this.firstName = firstName;
-    this.lastName = lastName;
+    this.fullName = fullName;
+//    this.lastName = lastName;
     this.username = username;
     this.password = password;
 
@@ -43,24 +44,27 @@ public class UserPrincipal implements UserDetails {
     }
   }
 
-  public static UserPrincipal create(User user) {
+  public static UserPrincipal create(UserEntity userEntity) {
     List<GrantedAuthority> authorities = new LinkedList<>();
-    authorities.add(new SimpleGrantedAuthority(user.getRole().getName()));
-    return new UserPrincipal(user.getId(), user.getFirstName(), user.getLastName(),
-        user.getUsername(), user.getPassword(), authorities);
+    RoleEntity roleEntity = userEntity.getRoleEntity();
+    String roleName = roleEntity.getName();
+    GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(roleName);
+    authorities.add(grantedAuthority);
+    return new UserPrincipal(userEntity.getId(), userEntity.getFullName(),
+        userEntity.getUsername(), userEntity.getPassword(), authorities);
   }
 
   public String getId() {
     return id;
   }
 
-  public String getFirstName() {
-    return firstName;
+  public String getFullName() {
+    return fullName;
   }
 
-  public String getLastName() {
-    return lastName;
-  }
+//  public String getLastName() {
+//    return lastName;
+//  }
 
   @Override
   public String getUsername() {

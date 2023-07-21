@@ -16,9 +16,9 @@ public class UserDto extends DateAuditingDto {
 
   private String username;
 
-  private String firstName;
+  private String fullName;
 
-  private String lastName;
+//  private String lastName;
 
   private String roleName;
 
