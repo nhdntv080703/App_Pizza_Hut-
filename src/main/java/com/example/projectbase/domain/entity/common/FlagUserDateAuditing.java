@@ -20,4 +20,19 @@ public abstract class FlagUserDateAuditing extends UserDateAuditing {
   @Column(nullable = false)
   private Boolean activeFlag = Boolean.TRUE;
 
+  public Boolean getDeleteFlag() {
+    return deleteFlag;
+  }
+
+  public void setDeleteFlag(Boolean deleteFlag) {
+    this.deleteFlag = deleteFlag;
+  }
+
+  public Boolean getActiveFlag() {
+    return activeFlag;
+  }
+
+  public void setActiveFlag(Boolean activeFlag) {
+    this.activeFlag = activeFlag;
+  }
 }

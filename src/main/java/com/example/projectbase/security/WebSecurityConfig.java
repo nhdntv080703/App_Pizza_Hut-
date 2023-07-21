@@ -19,7 +19,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(
@@ -32,6 +32,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   private final CustomUserDetailsServiceImpl customUserDetailsService;
 
   private final JwtAuthenticationFilter jwtAuthenticationFilter;
+
+  public WebSecurityConfig(CustomUserDetailsServiceImpl customUserDetailsService, JwtAuthenticationFilter jwtAuthenticationFilter) {
+    this.customUserDetailsService = customUserDetailsService;
+    this.jwtAuthenticationFilter = jwtAuthenticationFilter;
+  }
 
   @Bean
   public PasswordEncoder passwordEncoder() {
@@ -50,7 +55,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .authorizeRequests()
         .antMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
         .antMatchers("/api/v1/auth/**").permitAll()
-        .anyRequest().authenticated()
+//        .anyRequest().authenticated()
         .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     http.exceptionHandling().authenticationEntryPoint(new JwtAuthenticationEntryPoint());
     http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);

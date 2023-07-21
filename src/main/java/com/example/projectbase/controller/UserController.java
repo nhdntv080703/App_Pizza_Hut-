@@ -4,6 +4,7 @@ import com.example.projectbase.base.RestApiV1;
 import com.example.projectbase.base.VsResponseUtil;
 import com.example.projectbase.constant.UrlConstant;
 import com.example.projectbase.domain.dto.pagination.PaginationFullRequestDto;
+import com.example.projectbase.domain.dto.request.UserCreateDTO;
 import com.example.projectbase.security.CurrentUser;
 import com.example.projectbase.security.UserPrincipal;
 import com.example.projectbase.service.UserService;
@@ -11,19 +12,22 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.tags.Tags;
-import lombok.RequiredArgsConstructor;
 import org.springdoc.api.annotations.ParameterObject;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @RestApiV1
 public class UserController {
 
   private final UserService userService;
+
+  public UserController(UserService userService) {
+    this.userService = userService;
+  }
 
   @Tag(name = "user-controller-admin")
   @Operation(summary = "API get user")
@@ -47,4 +51,18 @@ public class UserController {
     return VsResponseUtil.success(userService.getCustomers(requestDTO));
   }
 
+  @PostMapping("/forgot-password")
+  public ResponseEntity<?> forgotPassWord(@RequestParam String userName){
+    return userService.forgotPassWord(userName);
+  }
+
+  @PostMapping("/new-user")
+  public ResponseEntity<?> createUser (@Valid @RequestBody UserCreateDTO userDTO, BindingResult bindingResult) {
+    return userService.createNewUser(userDTO, bindingResult);
+  }
+
+  @PutMapping
+  public ResponseEntity<?> updateUser (@Valid @ModelAttribute UserCreateDTO userDTO, BindingResult bindingResult) {
+    return userService.updateUser(userDTO, bindingResult);
+  }
 }

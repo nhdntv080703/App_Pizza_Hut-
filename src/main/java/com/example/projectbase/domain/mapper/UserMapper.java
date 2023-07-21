@@ -1,8 +1,8 @@
 package com.example.projectbase.domain.mapper;
 
-import com.example.projectbase.domain.dto.request.UserCreateDto;
+import com.example.projectbase.domain.dto.request.UserCreateDTO;
 import com.example.projectbase.domain.dto.response.UserDto;
-import com.example.projectbase.domain.entity.User;
+import com.example.projectbase.domain.entity.UserEntity;
 import org.mapstruct.*;
 
 import java.util.List;
@@ -10,13 +10,13 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface UserMapper {
 
-  User toUser(UserCreateDto userCreateDTO);
+  UserEntity toUser(UserCreateDTO userCreateDTO);
 
   @Mappings({
-      @Mapping(target = "roleName", source = "user.role.name"),
+      @Mapping(target = "roleName", source = "userEntity.roleEntity.name"),
   })
-  UserDto toUserDto(User user);
+  UserDto toUserDto(UserEntity userEntity);
 
-  List<UserDto> toUserDtos(List<User> user);
+  List<UserDto> toUserDtos(List<UserEntity> userEntity);
 
 }
