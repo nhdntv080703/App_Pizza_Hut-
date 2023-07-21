@@ -2,11 +2,10 @@ package com.example.projectbase;
 
 import com.example.projectbase.config.properties.AdminInfoProperties;
 import com.example.projectbase.constant.RoleConstant;
-import com.example.projectbase.domain.entity.Role;
-import com.example.projectbase.domain.entity.User;
+import com.example.projectbase.domain.entity.RoleEntity;
+import com.example.projectbase.domain.entity.UserEntity;
 import com.example.projectbase.repository.RoleRepository;
 import com.example.projectbase.repository.UserRepository;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -17,7 +16,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Slf4j
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @EnableConfigurationProperties({AdminInfoProperties.class})
 @SpringBootApplication
 public class ProjectBaseApplication {
@@ -27,6 +26,12 @@ public class ProjectBaseApplication {
   private final RoleRepository roleRepository;
 
   private final PasswordEncoder passwordEncoder;
+
+  public ProjectBaseApplication(UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder) {
+    this.userRepository = userRepository;
+    this.roleRepository = roleRepository;
+    this.passwordEncoder = passwordEncoder;
+  }
 
   public static void main(String[] args) {
     Environment env = SpringApplication.run(ProjectBaseApplication.class, args).getEnvironment();
@@ -43,23 +48,23 @@ public class ProjectBaseApplication {
         + " Application------------------------------");
   }
 
-  @Bean
-  CommandLineRunner init(AdminInfoProperties userInfo) {
-    return args -> {
-      //init role
-      if (roleRepository.count() == 0) {
-        roleRepository.save(new Role(null, RoleConstant.ADMIN, null));
-        roleRepository.save(new Role(null, RoleConstant.USER, null));
-      }
-      //init admin
-      if (userRepository.count() == 0) {
-        User admin = User.builder().username(userInfo.getUsername())
-            .password(passwordEncoder.encode(userInfo.getPassword()))
-            .firstName(userInfo.getFirstName()).lastName(userInfo.getLastName())
-            .role(roleRepository.findByRoleName(RoleConstant.ADMIN)).build();
-        userRepository.save(admin);
-      }
-    };
-  }
+//  @Bean
+//  CommandLineRunner init(AdminInfoProperties userInfo) {
+//    return args -> {
+//      //init role
+//      if (roleRepository.count() == 0) {
+//        roleRepository.save(new RoleEntity(null, RoleConstant.ADMIN, null));
+//        roleRepository.save(new RoleEntity(null, RoleConstant.USER, null));
+//      }
+//      //init admin
+//      if (userRepository.count() == 0) {
+//        UserEntity admin = UserEntity.builder().username(userInfo.getUsername())
+//            .password(passwordEncoder.encode(userInfo.getPassword()))
+//            .firstName(userInfo.getFirstName()).lastName(userInfo.getLastName())
+//            .roleEntity(roleRepository.findByRoleName(RoleConstant.ADMIN)).build();
+//        userRepository.save(admin);
+//      }
+//    };
+//  }
 
 }
